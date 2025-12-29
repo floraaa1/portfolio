@@ -4,8 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SZ's Portfolio</title>
+
+     <!-- Normalize CSS for browser compatability -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+     <!-- Add link to any google fonts used here -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+ 
+     <!-- My Styles -->
+     <link href="styles.css" rel="stylesheet">
+ 
+     <!-- Meta tag for mobile support -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+     <!-- My Script -->
+     <script src="script.js" defer></script>
 </head>
 <body>
     <h1>HI!</h1>
+    <main>
+        <nav class="menu-bar">
+            <ul>
+                <li><a href="#section3">About Me</a></li>
+                <li><a href="#section1">Major Projects</a></li>
+                <li><a href="#section2">Exercises</a></li>
+                <li><a href="#section4">Useful Tools and Links</a></li>
+            </ul>
+        </nav>
+
+        <aside>
+            <h3 id="section3">About Me</h3>
+        <div class="about-me">
+            <img src="image/aprofile.JPG" alt="profile image">
+            <p class="paragraph">Hi! Welcome to my website! My name is Shutong Zhang. I am currently a third-year design and art studio major at UC Davis. I aimed to work in the interactive media field, which includes UI/UX, 3D modeling, and more. As a designer, I am always curious, passionate, and energetic about new things. Writing instructions for fixing new things will be one of my fields of interest.</p>
+        </div>
+        </aside>
+
+        <section class="project-section">
+            <div class="project major-project">
+            <h2 id="section1">Major Projects</h2>
+            <ul>
+                <li>
+                    <a href="blog/index.html">
+                    <img class="blogcover" src="image/blogcover1.png" alt="blogcover1" width="300">
+                    </a>
+                </li>
+                <li>
+                    <a href="Wordzard/index.html">
+                        <img class="incover" src="image/incover1.png" alt="incover1" width="300">
+                    </a>
+                </li>
+            </ul>
+            </div>
+
+        <div class="project exercise-project">
+            <h2 id="section2">Exercises</h2>
+            <ul>
+                <li><a href="Zhang/index.html">Personal Site</a></li>
+                <li><a href="lemmingarticle/index.html">External Stylesheet Practice</a></li>
+                <li><a href="css-backgrounds/">CSS Background</a></li>
+                <li><a href="zhang_markup/index.html">Article with Styling</a></li>
+                <li><a href="bgimageexample/index.html">Custome Background Exercises </a></li>
+                <li><a href="fonttest/index.html">Font Test </a></li>
+                <li><a href="variable-fonttest/index.html">Variable-Fontest </a></li>
+                <li><a href="flexboxchalleneges/">Flexbox-Challenges </a></li>
+                <li><a href="pirate/index.html">Responsive Design </a></li>
+                <li><a href="positioning/">Positioning </a></li>
+                <li><a href="grid-challenges/">Grid-Challenges </a></li>
+                <li><a href="dropdownmenus-start/">Drop Down Menus </a></li>
+                <li><a href="reviewSiteStart/index.html">Review Site Start </a></li>
+                <li><a href="CSS-Animation-START/">Animation </a></li>
+            </ul>
+        </div>
+        </section>
+
+        <div class="useful-tool">
+            <h3 id="section4">Useful Tools and Links</h3>
+            <ul>
+                <li><a href="http://wbwip.com/wbw/emailencoder.html">Email encoder</a></li>
+                <li><a href="https://fontawesome.com/icons">Icons</a></li>
+                <li><a href="https://www.w3schools.com/tags/default.asp">HTML Helper</a></li>
+                <li><a href="https://fonts.google.com/">Google Fonts</a></li>
+                <li><a href="https://wakamaifondue.com/">Drop A Fonts</a></li>
+                <li><a href="https://v-fonts.com/">Variable Fonts</a></li>
+                <li><a href="https://angrytools.com/css-generator/transform/">Matrix Transform</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>Designed by Shutong Zhang</p>
+        <address>
+            Contact:<a href="mailto:&#115;&#116;&#103;&#122;&#104;&#097;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">&#115;&#116;&#103;&#122;&#104;&#097;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;</a>
+        </address>
+    </footer>
+    </main>
+
 </body>
 </html>
