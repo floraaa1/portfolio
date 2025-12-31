@@ -2,3 +2,647 @@
     box-sizing: border-box;
 }
 
+/* --- 蓝紫色魔法主题变量 --- */
+:root {
+    --bg-gradient-start: #0f0c29;
+    --bg-gradient-mid: #302b63;
+    --bg-gradient-end: #24243e;
+
+    --primary-blue: #4361ee;
+    --primary-purple: #7209b7;
+    --neon-cyan: #4cc9f0;
+    --neon-pink: #f72585;
+    --magic-gold: #ffd700;
+
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+
+    --text-white: #ffffff;
+    --text-glow: 0 0 10px rgba(76, 201, 240, 0.6);
+}
+
+/* !!! 关键修复：防止内容溢出屏幕 !!! */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.profile-pic {
+    max-width: 30%;
+}
+
+body {
+    /* 1. 设置更丰富的渐变色 (4个颜色：深蓝 -> 紫 -> 深红 -> 黑) */
+    background: linear-gradient(-45deg, #0f0c29, #302b63, #7209b7, #24243e);
+    
+    /* 2. 放大背景尺寸，这样才能让它动起来 */
+    background-size: 400% 400%;
+    
+    /* 3. 添加动画：15秒循环一次 */
+    animation: gradientBG 15s ease infinite;
+    
+    /* 保持原有的字体设置 */
+    color: var(--text-white);
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* 4. 添加动画关键帧 (加在 body 后面即可) */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* --- 1. 修复后的导航栏 --- */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* 确保从最左边开始 */
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* 调整边距，确保右侧 Contact 不会被切掉 */
+    padding: 0 30px;
+    background: rgba(15, 12, 41, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* --- 新 Logo 样式 --- */
+.logo {
+    font-family: "Passero One", cursive;
+    font-size: 1.6rem;
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: default;
+}
+
+.magic-symbol {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 5px var(--magic-gold));
+    transition: transform 0.5s ease;
+}
+
+/* 鼠标放上去，月亮会旋转 */
+.logo:hover .magic-symbol {
+    transform: rotate(-20deg) scale(1.2);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    /* 链接之间的间距 */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links li {
+    flex-shrink: 0;
+    /* 防止文字被挤压换行 */
+}
+
+/* 普通导航链接 */
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    opacity: 0.9;
+}
+
+.nav-links a:not(.btn-contact):hover {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--neon-cyan);
+    opacity: 1;
+}
+
+/* 普通链接的下划线动画 */
+.nav-links a:not(.btn-contact)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--neon-cyan);
+    transition: width 0.3s;
+}
+
+.nav-links a:not(.btn-contact):hover::after {
+    width: 100%;
+}
+
+/* --- Contact 按钮特殊样式 (胶囊形状) --- */
+.btn-contact {
+    padding: 8px 20px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-contact:hover {
+    background: var(--neon-cyan);
+    color: #0f0c29 !important;
+    /* 悬停时字变深色 */
+    box-shadow: 0 0 15px var(--neon-cyan);
+    transform: translateY(-2px);
+}
+
+/* --- 2. Hero 区域 --- */
+#hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 70px;
+}
+
+#hero h1 {
+    font-family: "Passero One", cursive;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    /* 更加梦幻的文字渐变 */
+    background: linear-gradient(to right, #fff, var(--neon-cyan), #fff);
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(76, 201, 240, 0.4));
+    animation: float 3s ease-in-out infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+#hero h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #dcdcdc;
+    margin-top: 0;
+    letter-spacing: 1px;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.scroll-indicator {
+    margin-top: 60px;
+    font-size: 2rem;
+    color: var(--neon-cyan);
+    animation: bounce 2s infinite;
+    cursor: default;
+}
+
+
+/* --- 通用 Section 样式 --- */
+.content-section {
+    padding: 80px 10%;
+    min-height: 60vh;
+}
+
+.section-title {
+    font-family: "Passero One", cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 15px var(--primary-blue);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '✨';
+    position: absolute;
+    right: -35px;
+    top: -5px;
+    font-size: 1.5rem;
+    animation: spin 3s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- 3. About 区域 --- */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.info-card,
+.bio-card {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.info-card {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.bio-card {
+    flex: 1 1 100%;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 3px solid var(--neon-cyan);
+    /* 顶部亮条 */
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(76, 201, 240, 0.2);
+}
+
+.info-card h3 {
+    color: var(--neon-pink);
+    font-family: "Passero One";
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* --- 4. Skills 区域 --- */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-tag {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-tag:hover {
+    transform: scale(1.1);
+    background: var(--neon-cyan);
+    color: #0f0c29;
+    box-shadow: 0 0 25px var(--neon-cyan);
+    border-color: transparent;
+}
+
+/* --- 5. Projects 区域 --- */
+.project-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    justify-items: center;
+    padding-bottom: 50px;
+}
+
+.card {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 2/3;
+    perspective: 1000px;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover .inner {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 卡片正面 */
+.front {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.front img {
+    width: 85%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+
+.card:hover .front img {
+    transform: scale(1.05);
+    /* 鼠标放上去图片轻微放大 */
+}
+
+.front h3 {
+    margin-top: 25px;
+    font-family: "Passero One";
+    font-size: 1.8rem;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 卡片背面 */
+.back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #240b36, #c31432);
+    /* 深红紫渐变，对比强烈 */
+    padding: 20px;
+}
+
+.back ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.back li {
+    margin: 12px 0;
+}
+
+.back a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    transition: 0.3s;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 0.95rem;
+}
+
+.back a:hover {
+    background: white;
+    color: var(--primary-purple);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid var(--glass-border);
+}
+
+/* --- 6. JavaScript 交互特效样式 --- */
+
+/* 1. 魔法星尘 (鼠标拖尾) */
+.magic-star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--magic-gold);
+    border-radius: 50%;
+    pointer-events: none;
+    /* 让鼠标可以透过星星点击下面的内容 */
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-pink);
+    animation: fadeAndFall 1s linear forwards;
+    z-index: 9999;
+}
+
+@keyframes fadeAndFall {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 50px) scale(0);
+        /* 向下飘落并缩小 */
+    }
+}
+
+/* 2. 滚动显现 (初始状态：隐藏且下沉) */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+/* 滚动显现 (激活状态：显示且归位) */
+.reveal-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. 打字机光标效果 */
+.typing-cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: var(--neon-cyan);
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* --- styles.css --- */
+
+/* 1. 网格布局容器 */
+.project-grid-wrapper {
+    display: grid;
+    /* 响应式布局：至少300px宽，自动填充 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 2. 卡片主体样式 */
+.project-card {
+    /* 背景色：这里用了极淡的白色，配合你的暗黑主题 */
+    /* 如果你想要截图里那种纯白卡片，改成 background: #ffffff; 并将文字颜色设为深色 */
+    background: rgba(255, 255, 255, 0.95); 
+    border-radius: 24px;
+    overflow: hidden; /* 确保图片圆角不溢出 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* 3. 图片区域 */
+.card-image {
+    width: 100%;
+    height: 220px; /* 固定图片高度 */
+    overflow: hidden;
+    padding: 15px 15px 0 15px; /* 图片周围留白，像截图那样 */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px; /* 图片本身的圆角 */
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-image img {
+    transform: scale(1.05); /* 悬停时图片微放大 */
+}
+
+/* 4. 内容区域 */
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* 让内容撑满剩余空间 */
+    color: #333; /* 卡片内用深色文字，因为背景是浅色的 */
+}
+
+.card-content h3 {
+    font-family: 'Passero One', cursive; /* 保持你的标题字体 */
+    font-size: 1.8rem;
+    margin: 0 0 5px 0;
+    color: #0f0c29; /* 深色标题 */
+}
+
+.category {
+    font-size: 0.9rem;
+    color: var(--neon-cyan); /* 使用你的主题蓝 */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* 确保按钮始终在底部 */
+}
+
+/* 5. 标签样式 (Tags) */
+.tags-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #eef2f5;
+    color: #555;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* 6. Live 按钮样式 */
+.btn-live {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background: var(--neon-cyan); /* 按钮颜色 */
+    color: #fff;
+    text-align: center;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 201, 240, 0.4);
+}
+
+.btn-live:hover {
+    background: var(--primary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67, 97, 238, 0.6);
+}

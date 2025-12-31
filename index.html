@@ -3,85 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SZ's Portfolio</title>
+    <title>Shutong's Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passero+One&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    
+    <link href="styles.css" rel="stylesheet">
 
-     <!-- Normalize CSS for browser compatability -->
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-
-     <!-- Add link to any google fonts used here -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
- 
-     <!-- My Styles -->
-     <link href="styles.css" rel="stylesheet">
- 
-     <!-- Meta tag for mobile support -->
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-     <!-- My Script -->
-     <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </head>
+
 <body>
-    <h1>HI!</h1>
+    <nav class="glass-nav">
+        <span class="magic-symbol">🌙</span>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="mailto:stgzhang@ucdavis.edu">Contact</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <nav class="menu-bar">
-            <ul>
-                <li><a href="#section3">About Me</a></li>
-                <li><a href="#section1">Major Projects</a></li>
-                <li><a href="#section2">Exercises</a></li>
-                <li><a href="#section4">Useful Tools and Links</a></li>
-            </ul>
-        </nav>
-
-        <aside>
-            <h3 id="section3">About Me</h3>
-        <div class="about-me">
-            <img src="image/aprofile.JPG" alt="profile image">
-            <p class="paragraph">Hi! Welcome to my website! My name is Shutong Zhang. I am currently a third-year design and art studio major at UC Davis. I aimed to work in the interactive media field, which includes UI/UX, 3D modeling, and more. As a designer, I am always curious, passionate, and energetic about new things. Writing instructions for fixing new things will be one of my fields of interest.</p>
-        </div>
-        </aside>
-
-        <section class="project-section">
-            <div class="project major-project">
-            <h2 id="section1">Major Projects</h2>
-            <ul>
-                <li>
-                    <a href="blog/index.html">
-                    <img class="blogcover" src="image/blogcover1.png" alt="blogcover1" width="300">
-                    </a>
-                </li>
-                <li>
-                    <a href="Wordzard/index.html">
-                        <img class="incover" src="image/incover1.png" alt="incover1" width="300">
-                    </a>
-                </li>
-            </ul>
+        <section id="hero">
+            <div class="hero-content">
+                <img src="images/profile.png" alt="Shutong's Profile Picture" class="profile-pic">
+                <h1>Hi, I'm Shutong!</h1>
+                <h2>UI/UX Designer & Web Designer✨</h2>
+                <div class="scroll-indicator">↓</div>
             </div>
-
-        <div class="project exercise-project">
-            <h2 id="section2">Exercises</h2>
-            <ul>
-               
-            </ul>
-        </div>
         </section>
 
-        <div class="useful-tool">
-            <h3 id="section4">Useful Tools and Links</h3>
-            <ul>
-               
-            </ul>
-        </div>
+        <section id="about" class="content-section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-container">
+                <div class="info-card">
+                    <h3>🎓 Education</h3>
+                    <p>University of California, Davis</p>
+                    <p>Design</p>
+                </div>
+                <div class="info-card">
+                    <h3>🌏 Languages</h3>
+                    <p>English (Fluent)</p>
+                    <p>Mandarin (Native)</p>
+                </div>
+                
+                <div class="bio-card">
+                    <p>I aim to work in the interactive media field, which encompasses UI/UX, 3D modeling, and other related areas. As a designer, I am always curious, passionate, and energetic about new ideas and concepts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="content-section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Blender</span>
+                <span class="skill-tag">Adobe Creative Suite</span>
+                <span class="skill-tag">Capcut/Pr</span>
+                <span class="skill-tag">Processing</span>
+                <span class="skill-tag">Python</span>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2 class="section-title">My Projects</h2>
+            
+            <div class="project-grid-wrapper">
+                
+                <div class="project-card">
+                    <div class="card-image">
+                        <img src="images/eye-cage.png" alt="The Eye Cage">
+                    </div>
+                    <div class="card-content">
+                        <h3>The Eye Cage</h3>
+                        <h4 class="category">Interactive Video</h4>
+                        <p>In a futuristic sci-fi setting, the AI monitors information and memories as a narrator, guiding visitors through the E-Waste Museum.</p>
+                        
+                        <div class="tags-container">
+                            <span class="tag">Blender</span>
+                            <span class="tag">CapCut</span>
+                        </div>
+        
+                        <a href="https://www.youtube.com/watch?v=skRk_zr4WbA" class="btn-live">
+                            Live ↗
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="project-card">
+                    <div class="card-image">
+                        <img src="images/chlorgen.png" alt="Chlorgen App">
+                    </div>
+                    <div class="card-content">
+                        <h3>Chlorgen</h3>
+                        <h4 class="category">App Design</h4>
+                        <p>The prevalence of allergies is on the rise. This app relieves anxiety and supports individuals with allergies, enhancing well-being.</p>
+                        
+                        <div class="tags-container">
+                            <span class="tag">Figma</span>
+                        </div>
+        
+                        <a href="https://www.figma.com/proto/4HxyOsPBGkYxx6QlqaqB7d/Final-project--DES-112-?node-id=39-24&t=mV27Lj4henX3U6Zw-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=34%3A212&show-proto-sidebar=1" class="btn-live">
+                            Live ↗
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="project-card">
+                    <div class="card-image">
+                        <img src="images/google-news.png" alt="Google News Redesign">
+                    </div>
+                    <div class="card-content">
+                        <h3>Google News Redesign</h3>
+                        <h4 class="category">Interface Design</h4>
+                        <p>Integrating AI and interactive design to personalize content and foster ongoing user engagement through participation.</p>
+                        
+                        <div class="tags-container">
+                            <span class="tag">Figma</span>
+                        </div>
+        
+                        <a href="https://drive.google.com/file/d/1yK7M2c7YJkzqJfE1bj4W6_rtv-Q63TCV/view?usp=sharing" class="btn-live">
+                            Live ↗
+                        </a>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>Designed by Shutong Zhang</p>
-        <address>
-            Contact:<a href="mailto:&#115;&#116;&#103;&#122;&#104;&#097;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">&#115;&#116;&#103;&#122;&#104;&#097;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;</a>
-        </address>
+        <p>© 2024 Shutong. Keep Magic Alive. ✨</p>
     </footer>
-    </main>
-
 </body>
 </html>
