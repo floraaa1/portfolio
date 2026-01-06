@@ -114,4 +114,17 @@ li {
 ul {
     padding: 20px;
     margin: 0;
+    display: flex;          
+    justify-content: center; 
+    gap: 20px;
+}
+
+#home-btn{
+    background-color: #ffcccc;
+    color: #000000;
+}
+
+#home-btn:hover {
+    background-color: #ffa54a; 
+    color: white;
 }
