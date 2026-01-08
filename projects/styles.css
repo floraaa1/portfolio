@@ -1,5 +1,5 @@
 body {
-    background-color: #FDDBB0;
+    background-image: linear-gradient(to bottom, #fdd095, #ffd9d9);
     color: black;
     max-width: 1200px;
 }
@@ -120,7 +120,7 @@ ul {
 }
 
 #home-btn{
-    background-color: #ffcccc;
+    background-color: #a9e4fc;
     color: #000000;
 }
 
