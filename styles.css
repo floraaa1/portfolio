@@ -21,7 +21,6 @@
     --text-glow: 0 0 10px rgba(76, 201, 240, 0.6);
 }
 
-/* !!! 关键修复：防止内容溢出屏幕 !!! */
 * {
     box-sizing: border-box;
 }
