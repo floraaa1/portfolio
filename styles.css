@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-/* --- 蓝紫色魔法主题变量 --- */
+
 :root {
     --bg-gradient-start: #0f0c29;
     --bg-gradient-mid: #302b63;
