@@ -4,41 +4,32 @@
 
 /* --- 蓝紫色魔法主题变量 --- */
 :root {
-    --bg-gradient-start: #0f0c29;
-    --bg-gradient-mid: #302b63;
-    --bg-gradient-end: #24243e;
-
-    --primary-blue: #4361ee;
-    --primary-purple: #7209b7;
-    --neon-cyan: #4cc9f0;
-    --neon-pink: #f72585;
-    --magic-gold: #ffd700;
-
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-
-    --text-white: #ffffff;
-    --text-glow: 0 0 10px rgba(76, 201, 240, 0.6);
+    --bg-color: #FFF9C4;       /* 奶油黄背景 */
+    --primary-purple: #9b5de5; /* 糖果紫 (用于标题/导航) */
+    --pop-yellow: #fee440;     /* 柠檬黄 */
+    
+    /* --- 💙 项目卡片专用颜色 (源自你的截图) --- */
+    --card-bg: #ffffff;        /* 纯白卡片背景 */
+    --card-text: #333333;      /* 卡片内深色文字 */
+    --card-accent: #4cc9f0;    /* 截图里的亮蓝色 (用于按钮和分类) */
+    --tag-bg: #dff6ff;         /* 截图里的淡蓝色标签背景 */
+    
+    /* 装饰用 */
+    --border-style: 3px solid var(--primary-purple);
 }
 
 .giraffe-container {
     display: flex;
-    justify-content: center; /* 居中对齐 */
-    gap: 20px;               /* 图片之间的间距 */
-    margin-top: 40px;        /* 与上方标题保持距离 */
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
 }
-
-/* 修正后的图片样式 (使用 . 而不是 #) */
 .giraffe-pic {
-    width: 80px;  /* 设置一个合适的小尺寸，你可以根据需要调整这个数字 */
-    height: auto; /* 保持图片比例不变 */
-    
-    /* 可选：为了更有趣，加一个鼠标悬停的小动画 */
+    width: 80px; 
+    height: auto;
     transition: transform 0.3s ease;
     cursor: pointer;
 }
-
-/* 可选：鼠标放上去时，长颈鹿会跳一下 */
 .giraffe-pic:hover {
     transform: translateY(-10px) rotate(10deg);
 }
@@ -54,21 +45,17 @@ html {
 
 .profile-pic {
     max-width: 30%;
+    padding-top:80px;
 }
 
 body {
-    /* 1. 设置更丰富的渐变色 (4个颜色：深蓝 -> 紫 -> 深红 -> 黑) */
-    background: linear-gradient(-45deg, #0f0c29, #302b63, #7209b7, #24243e);
+    background-color: var(--bg-color);
+    /*在此添加可爱的圆点背景图案*/
+    background-image: radial-gradient(var(--primary-purple) 1px, transparent 1px);
+    background-size: 30px 30px; /* 圆点间距 */
     
-    /* 2. 放大背景尺寸，这样才能让它动起来 */
-    background-size: 400% 400%;
-    
-    /* 3. 添加动画：15秒循环一次 */
-    animation: gradientBG 15s ease infinite;
-    
-    /* 保持原有的字体设置 */
-    color: var(--text-white);
-    font-family: 'Quicksand', sans-serif;
+    color: var(--text-main);
+    font-family: 'Quicksand', sans-serif; /* 圆体字非常适合可爱风 */
     margin: 0;
     min-height: 100vh;
     overflow-x: hidden;
@@ -79,9 +66,11 @@ body {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -90,21 +79,20 @@ body {
 /* --- 1. 修复后的导航栏 --- */
 .glass-nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    /* 确保从最左边开始 */
-    width: 100%;
+    top: 20px; /* 稍微悬浮一点，不要贴顶 */
+    left: 5%;
+    width: 90%;
     height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* 调整边距，确保右侧 Contact 不会被切掉 */
     padding: 0 30px;
-    background: rgba(15, 12, 41, 0.85);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--glass-border);
+    
+    background: #ffffff;
+    border: var(--border-style); /* 紫色粗边框 */
+    border-radius: 50px;         /* 更加圆润 */
+    box-shadow: 0 4px 15px rgba(155, 93, 229, 0.2);
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* --- 新 Logo 样式 --- */
@@ -147,18 +135,18 @@ body {
 /* 普通导航链接 */
 .nav-links a {
     text-decoration: none;
-    color: var(--text-white);
-    font-weight: 600;
-    font-size: 1rem;
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 20px;
     transition: all 0.3s ease;
-    position: relative;
-    opacity: 0.9;
 }
 
 .nav-links a:not(.btn-contact):hover {
-    color: var(--neon-cyan);
-    text-shadow: 0 0 8px var(--neon-cyan);
-    opacity: 1;
+    background: var(--primary-purple);
+    color: #fff;
+    transform: rotate(-3deg);
 }
 
 /* 普通链接的下划线动画 */
@@ -179,19 +167,16 @@ body {
 
 /* --- Contact 按钮特殊样式 (胶囊形状) --- */
 .btn-contact {
-    padding: 8px 20px;
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background: var(--pop-yellow);
+    color: var(--text-main) !important;
+    border: 2px solid var(--text-main);
+    border-radius: 30px;
+    box-shadow: 3px 3px 0 var(--text-main);
 }
 
 .btn-contact:hover {
-    background: var(--neon-cyan);
-    color: #0f0c29 !important;
-    /* 悬停时字变深色 */
-    box-shadow: 0 0 15px var(--neon-cyan);
-    transform: translateY(-2px);
+    transform: translate(2px, 2px); /* 按下效果 */
+    box-shadow: none;
 }
 
 /* --- 2. Hero 区域 --- */
@@ -209,21 +194,17 @@ body {
     font-family: "Passero One", cursive;
     font-size: 4rem;
     margin-bottom: 20px;
-    /* 更加梦幻的文字渐变 */
-    background: linear-gradient(to right, #fff, var(--neon-cyan), #fff);
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 15px rgba(76, 201, 240, 0.4));
+    color: var(--primary-purple); /* 纯紫色 */
+    text-shadow: 4px 4px 0px var(--pop-yellow); /* 黄色投影 */
+    background: none; /* 去掉之前的渐变 */
+    -webkit-text-fill-color: initial;
     animation: float 3s ease-in-out infinite;
-    -webkit-background-clip: text;
-    background-clip: text;
 }
 
 #hero h2 {
     font-size: 1.5rem;
-    font-weight: 400;
-    color: #dcdcdc;
-    margin-top: 0;
-    letter-spacing: 1px;
+    color: var(--text-light); /* 浅紫色 */
+    font-weight: 700;
 }
 
 @keyframes float {
@@ -255,15 +236,15 @@ body {
 
 .section-title {
     font-family: "Passero One", cursive;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 60px;
-    color: var(--neon-cyan);
-    text-shadow: 0 0 15px var(--primary-blue);
-    position: relative;
+    font-size: 3rem;
+    color: var(--primary-purple);
+    text-shadow: 3px 3px 0px #fff;
+    background: var(--pop-yellow); /* 标题背景是一条黄线 */
+    padding: 5px 20px;
+    border-radius: 50px;
+    transform: rotate(-2deg); /* 标题稍微歪一点更可爱 */
+    border: 2px dashed var(--primary-purple); /* 虚线边框 */
     display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .section-title::after {
@@ -295,18 +276,17 @@ body {
 
 .info-card,
 .bio-card {
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
+    background: #fff;
+    border: var(--border-style);
+    border-radius: 25px;
+    box-shadow: var(--cartoon-shadow); /* 黄色硬投影 */
+    color: var(--text-main);
     padding: 30px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .info-card {
-    flex: 1 1 300px;
-    text-align: center;
+    color: var(--primary-purple);
 }
 
 .bio-card {
@@ -320,8 +300,8 @@ body {
 }
 
 .info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(76, 201, 240, 0.2);
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px var(--pop-yellow);
 }
 
 .info-card h3 {
@@ -342,23 +322,18 @@ body {
 }
 
 .skill-tag {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border: 1px solid var(--glass-border);
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
+    background: #fff;
+    color: var(--text-main);
+    border: 2px solid var(--primary-purple);
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 3px 3px 0 rgba(155, 93, 229, 0.3);
 }
 
 .skill-tag:hover {
-    transform: scale(1.1);
-    background: var(--neon-cyan);
-    color: #0f0c29;
-    box-shadow: 0 0 25px var(--neon-cyan);
-    border-color: transparent;
+    background: var(--pop-yellow);
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 3px 3px 0 var(--text-main);
 }
 
 /* --- 5. Projects 区域 --- */
@@ -479,7 +454,7 @@ footer {
     padding: 40px;
     background-color: rgba(0, 0, 0, 0.6);
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255);
     border-top: 1px solid var(--glass-border);
 }
 
@@ -560,41 +535,42 @@ footer {
 
 /* 2. 卡片主体样式 */
 .project-card {
-    /* 背景色：这里用了极淡的白色，配合你的暗黑主题 */
-    /* 如果你想要截图里那种纯白卡片，改成 background: #ffffff; 并将文字颜色设为深色 */
-    background: rgba(255, 255, 255, 0.95); 
-    border-radius: 24px;
-    overflow: hidden; /* 确保图片圆角不溢出 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column; /* 垂直排列 */
+    background: #ffffff;  /* 纯白背景 */
+    border-radius: 24px;  /* 圆润的边角 */
+    overflow: hidden;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* 稍微加一点阴影，让白卡片在黄背景上浮起来 */
+    box-shadow: 0 10px 25px rgba(155, 93, 229, 0.15); 
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    border: none;
+    height: 100%;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 35px rgba(155, 93, 229, 0.25);
 }
 
 /* 3. 图片区域 */
 .card-image {
+    padding: 20px 20px 0 20px; /* 上左右留白 */
     width: 100%;
-    height: 220px; /* 固定图片高度 */
-    overflow: hidden;
-    padding: 15px 15px 0 15px; /* 图片周围留白，像截图那样 */
+    height: 240px;
+    background: #ffffff;
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 16px; /* 图片本身的圆角 */
-    transition: transform 0.5s ease;
+    border-radius: 16px;
 }
 
 .project-card:hover .card-image img {
-    transform: scale(1.05); /* 悬停时图片微放大 */
+    transform: scale(1.05);
+    /* 悬停时图片微放大 */
 }
 
 /* 4. 内容区域 */
@@ -602,32 +578,32 @@ footer {
     padding: 25px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* 让内容撑满剩余空间 */
-    color: #333; /* 卡片内用深色文字，因为背景是浅色的 */
+    flex-grow: 1;
+    background: #ffffff;
 }
 
 .card-content h3 {
-    font-family: 'Passero One', cursive; /* 保持你的标题字体 */
+    font-family: 'Passero One', cursive;
     font-size: 1.8rem;
     margin: 0 0 5px 0;
-    color: #0f0c29; /* 深色标题 */
+    color: #222;
+
 }
 
 .category {
-    font-size: 0.9rem;
-    color: var(--neon-cyan); /* 使用你的主题蓝 */
+    font-size: 0.85rem;
+    color: var(--card-accent); /* 亮蓝色 */
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 15px;
-    font-weight: 700;
 }
 
 .card-content p {
     font-size: 0.95rem;
-    color: #555;
+    color: #666;
     line-height: 1.6;
     margin-bottom: 20px;
-    flex-grow: 1; /* 确保按钮始终在底部 */
 }
 
 /* 5. 标签样式 (Tags) */
@@ -639,12 +615,12 @@ footer {
 }
 
 .tag {
-    background: #cde9ff;
-    color: #555;
+    background: var(--tag-bg); /* 淡蓝色背景 */
+    color: #444;               /* 深色文字 */
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 /* 6. Live 按钮样式 */
@@ -652,19 +628,19 @@ footer {
     display: block;
     width: 100%;
     padding: 12px 0;
-    background: var(--neon-cyan); /* 按钮颜色 */
-    color: #fff;
+    background: var(--card-accent); /* 亮蓝色背景 */
+    color: #ffffff;                 /* 白色文字 */
     text-align: center;
-    border-radius: 50px;
+    border-radius: 50px;            /* 圆角 */
     text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(76, 201, 240, 0.4);
+    box-shadow: none;
+    border: none;
 }
 
 .btn-live:hover {
-    background: var(--primary-blue);
+    background: #3db5e0; /* 悬停时稍微深一点 */
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(67, 97, 238, 0.6);
 }
