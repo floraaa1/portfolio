@@ -186,7 +186,7 @@ body {
     text-shadow: 4px 4px 0px var(--pop-yellow);
     background: none;
     -webkit-text-fill-color: initial;
-    animation: float 3s ease-in-out infinite;
+    /* animation: float 3s ease-in-out infinite; */
 }
 
 #hero h2 {
@@ -597,4 +597,16 @@ footer {
 .btn-live:hover {
     background: #822ef8;
     transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding: 60px 20px;
+    }
+
+    .project-grid-wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        padding: 10px; 
+        gap: 20px;
+    }
 }
