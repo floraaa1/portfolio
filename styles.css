@@ -21,6 +21,29 @@
     --text-glow: 0 0 10px rgba(76, 201, 240, 0.6);
 }
 
+.giraffe-container {
+    display: flex;
+    justify-content: center; /* 居中对齐 */
+    gap: 20px;               /* 图片之间的间距 */
+    margin-top: 40px;        /* 与上方标题保持距离 */
+}
+
+/* 修正后的图片样式 (使用 . 而不是 #) */
+.giraffe-pic {
+    width: 80px;  /* 设置一个合适的小尺寸，你可以根据需要调整这个数字 */
+    height: auto; /* 保持图片比例不变 */
+    
+    /* 可选：为了更有趣，加一个鼠标悬停的小动画 */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* 可选：鼠标放上去时，长颈鹿会跳一下 */
+.giraffe-pic:hover {
+    transform: translateY(-10px) rotate(10deg);
+}
+
+/* !!! 关键修复：防止内容溢出屏幕 !!! */
 * {
     box-sizing: border-box;
 }
