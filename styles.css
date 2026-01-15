@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-/* --- 蓝紫色魔法主题变量 --- */
+
 :root {
     --bg-color: #FFF9C4;       /* 奶油黄背景 */
     --primary-purple: #9b5de5; /* 糖果紫 (用于标题/导航) */
@@ -218,13 +218,6 @@ body {
     }
 }
 
-.scroll-indicator {
-    margin-top: 60px;
-    font-size: 2rem;
-    color: var(--neon-cyan);
-    animation: bounce 2s infinite;
-    cursor: default;
-}
 
 
 /* --- 通用 Section 样式 --- */
