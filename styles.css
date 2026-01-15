@@ -216,13 +216,6 @@ body {
     }
 }
 
-.scroll-indicator {
-    margin-top: 60px;
-    font-size: 2rem;
-    color: var(--neon-cyan);
-    animation: bounce 2s infinite;
-    cursor: default;
-}
 
 
 /* --- 通用 Section 样式 --- */
