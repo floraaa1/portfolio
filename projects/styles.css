@@ -1,7 +1,16 @@
 body {
-    background-image: linear-gradient(to bottom, #fdd095, #ffd9d9);
-    color: black;
+    background-image: linear-gradient(to bottom, #FFF3FE, #B8D6F4);
+    color: rgb(44, 44, 44);
     max-width: 1200px;
+    cursor: url('../images/candy.svg'), auto;
+}
+
+a:hover, button:hover, .clickable-element:hover {
+    cursor: url('../images/candy2.svg'), pointer;
+}
+
+a:active, button:active {
+    cursor: url('../images/candy2.svg'), pointer;
 }
 
 * {
@@ -11,7 +20,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
     font-family: "Inria Serif";
 }
 
@@ -51,7 +61,7 @@ article img {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 0;
-    color: #5c3e23;
+    color: #8883bb;
     text-align: center;
     justify-content: center;
     /* text-decoration:overline solid 3px; */
@@ -61,19 +71,22 @@ h2 {
     text-align: center;
     font-size: 2em;
     font-weight: normal;
-    color: #5c3e23;
+    color: #8a83da;
     justify-content: center;
     margin: auto;
-    padding-bottom: 20px;
 }
 
-.logo {
-    height: 50px;
-    margin: 0;
-    justify-content: center;
-    text-align: center;
-    display: block;
+h3 {
+    text-align: left;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 10px auto;
+    color: #3E579E;
+    /* margin:10px; */
+    padding:0 20px 0 20px;
+    /* padding-bottom: 20px; */
 }
+
 
 article {
     font-family: "Inria Serif";
@@ -90,19 +103,19 @@ nav a {
     display: inline-block;
     padding: 8px 15px;
     margin: 5px 0;
-    background-color: #f5fc8f;
-    color: 6e9eff;
+    background-color: #FDF6C1;
+    color: #3E579E;
     text-decoration: none;
     font-weight: bold;
     border-radius: 10px;
-    border: 2px solid #000000;
+    /* border: 2px solid #8b8b8b; */
     /* text-decoration: none; */
 }
 
 article a:hover,
 nav a:hover {
-    background-color: #6e9eff;
-    color: #f5fc8f;
+    background-color: #CDFDCA;
+    color: #424242;
     border-radius: 10px;
 
 }
@@ -120,8 +133,8 @@ ul {
 }
 
 #home-btn{
-    background-color: #a9e4fc;
-    color: #000000;
+    background-color: #FFF3FE;
+    color: #292929;
 }
 
 #home-btn:hover {

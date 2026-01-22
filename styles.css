@@ -56,6 +56,16 @@ body {
     margin: 0;
     min-height: 100vh;
     overflow-x: hidden;
+    cursor: url('images/candy.svg'), auto;
+    
+}
+
+a:hover, button:hover, .clickable-element:hover {
+    cursor: url('images/candy2.svg'), pointer;
+}
+
+a:active, button:active {
+    cursor: url('images/candy2.svg'), pointer;
 }
 
 @keyframes gradientBG {
@@ -218,7 +228,7 @@ body {
     font-size: 3rem;
     color: var(--primary-purple);
     text-shadow: 3px 3px 0px #fff;
-    background: var(--pop-yellow);
+    background: #FFF5FF;
     padding: 5px 20px;
     border-radius: 50px;
     transform: rotate(-2deg);
@@ -227,9 +237,9 @@ body {
 }
 
 .section-title::after {
-    content: '✨';
+    content: 'x';
     position: absolute;
-    right: -35px;
+    right: -20px;
     top: -5px;
     font-size: 1.5rem;
     animation: spin 3s infinite linear;
