@@ -41,7 +41,7 @@ html {
 }
 
 .profile-pic {
-    max-width: 30%;
+    max-width: 35%;
     padding-top:80px;
 }
 
@@ -193,7 +193,7 @@ a:active, button:active {
     font-size: 4rem;
     margin-bottom: 20px;
     color: var(--primary-purple);
-    text-shadow: 4px 4px 0px var(--pop-yellow);
+    text-shadow: 4px 4px 0px #feaed4;
     background: none;
     -webkit-text-fill-color: initial;
     /* animation: float 3s ease-in-out infinite; */
