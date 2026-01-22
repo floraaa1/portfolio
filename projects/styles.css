@@ -2,15 +2,15 @@ body {
     background-image: linear-gradient(to bottom, #FFF3FE, #B8D6F4);
     color: rgb(44, 44, 44);
     max-width: 1200px;
-    cursor: url('../images/candy.svg'), auto;
+    cursor: url('../images/candy2.svg'), auto;
 }
 
 a:hover, button:hover, .clickable-element:hover {
-    cursor: url('../images/candy2.svg'), pointer;
+    cursor: url('../images/candy.svg'), pointer;
 }
 
 a:active, button:active {
-    cursor: url('../images/candy2.svg'), pointer;
+    cursor: url('../images/candy.svg'), pointer;
 }
 
 * {
