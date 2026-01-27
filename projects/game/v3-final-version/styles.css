@@ -1,0 +1,469 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    background-color: #FFEEC4;
+    margin:0;
+    padding:0;
+}
+
+nav ul, nav ol{
+    list-style-type:none;
+}
+
+
+h1, h2, h3, p, ul, ol{
+    margin:0;
+    padding:0;
+}
+
+h1{
+    font-family:'Irish Grover';
+    font-size:2.5em;
+    text-align: center;
+    padding:20px;
+}
+
+h2{
+    font-family:'Irish Grover';
+    font-size:2.5em;
+    text-align: center;
+    padding:10px;
+}
+
+ul li{
+    font-family:'Irish Grover';
+    align-items: center;
+    list-style-type: disc;
+}
+
+.rule{
+    padding-bottom: 20px;
+    margin: 0 auto;   
+    text-align: left;
+    width:450px;
+    padding-top: 20px;
+    position: relative;
+}
+
+
+button{
+    font-family:'Irish Grover';
+    display:inline-block;
+    margin:0 auto;
+    text-align: center;
+    align-items: center;
+    cursor:pointer;
+    padding:10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: rgb(209,151,255);
+    font-size:1.5em;
+}
+
+button:hover{
+    background-color: #FFA187;
+}
+
+#roll:hover{
+    background-color: #FFCE16;
+}
+
+#rollagain:hover{
+    background-color: #FF738F;
+}
+
+#like:hover{
+    background-color: #D197FF;
+}
+
+#sClose:hover{
+    background-color: #C6D2FF;
+}
+
+#close:hover{
+    background-color: #FFCE16;
+}
+
+.intro{
+    display:flex;
+    padding-top:10px;
+}
+
+.background img{
+    width: 100%;
+    height: 750px;
+    display:block;
+    position: absolute;
+    z-index: -1;
+}
+
+body{
+    max-width: 1200px;
+    width:100%;
+    margin:0 auto;
+    overflow:hidden;
+}
+
+.page1{
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+span{
+    color:#FFA187;
+}
+
+.span1{
+    color:#0058FB;
+}
+
+.text1{
+    padding-top:100px;
+}
+
+.maze{
+    display:flex;
+    padding-top:10px;
+    width:98%;
+    margin:0 auto;
+}
+
+.maze img{
+    display:block;
+    height:auto;
+    width:100%;
+    align-items:center;
+    text-align: center;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+p{
+    font-family:'Irish Grover';
+    font-size:1.5em;
+}
+
+#roll{
+    font-family:'Irish Grover';
+    display:inline-block;
+    margin:0 auto;
+    text-align: center;
+    align-items: center;
+    cursor:pointer;
+    padding:10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: rgb(209,151,255);
+    font-size:1.5em;
+    padding-top: 10px;
+    margin-top:30px;
+}
+
+#rollagain{
+    font-family:'Irish Grover';
+    display:inline-block;
+    margin:0 auto;
+    text-align: center;
+    align-items: center;
+    cursor:pointer;
+    padding:10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #FFA187;
+    font-size:1.5em;  
+}
+
+#like{
+    font-family:'Irish Grover';
+    display:inline-block;
+    margin:0 auto;
+    text-align: center;
+    align-items: center;
+    cursor:pointer;
+    padding:10px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #C6D2FF;
+    font-size:1.5em;
+}
+
+.afterroll{
+    display:flex;
+    gap:20px;
+}
+
+
+.span3{
+    color:#002FFF;
+}
+
+.span4{
+    color:#FF738F;
+}
+
+.text2{
+    top:5px;
+    left:140px;
+    z-index:0;
+    position:absolute;
+}
+
+.text3{
+    bottom:10px;
+    left:300px;
+    z-index:1;
+    position:absolute;
+}
+
+.chess1-1{
+    left:202px;
+    top:41px;
+    z-index:0;
+    position:absolute;
+}
+
+.chess1-2{
+    top:670px;
+    left:350px;
+    z-index:1;
+    position:absolute;
+}  
+
+.page2{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.leftPart{
+    position:relative;
+    width:60%;
+    max-width:60%;
+}
+
+.surprise img{
+    display:block;
+    max-width:100%; 
+}
+
+.surprise1{
+    position:absolute;
+    top: 240px;
+    left: 185px;
+    z-index: 1;
+}
+
+.surprise2{
+    position:absolute;
+    top: 125px;
+    left: 340px;
+    z-index: 1;
+}
+
+.surprise3{
+    position:absolute;
+    top: 250px;
+    left: 490px;
+    z-index: 1;
+}
+
+.surprise4{
+    position:absolute;
+    top: 420px;
+    left: 260px;
+    z-index: 1;
+}
+
+.rightPart{
+    /* text-align: center;
+    align-items: center;
+    justify-content: center; */
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    padding-top:60px;
+    padding-right:20px;
+    padding-left:20px;
+}
+
+.player1,.player2{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding-left:0;
+}
+
+.p1bottom,.p2bottom {
+    display: flex;
+    align-items: center;
+    gap: 8px;        
+    margin-top: 10px;
+}
+
+.player1 img,.player2 img{
+    width:100%;
+    height:100%;
+    display: block;
+    object-fit: cover;
+}
+
+.chess2-1 img,.chess2-2 img{
+    width:100%;
+    height:100%;
+    display: block;
+}
+
+.chess2-1,.chess2-2{
+    align-items:center;
+    justify-content:center;
+    margin:0 auto;
+    padding:10px;
+    /* position:absolute; */
+    left:120px;
+}
+
+.player1-panel, .player2-panel {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 40px; 
+    margin-top: 20px;
+}
+
+#dice1, #dice2 {
+    min-width: 80px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#dice1, #dice2 {
+    top:30px;
+}
+
+#player1text, #player2text{
+    font-size: 1.5em;
+    font-family: 'Irish Grover';
+    padding: 10px;
+    margin:0;
+}
+
+#close{
+    font-family:'Irish Grover';
+    display:inline-block;
+    margin-top:30px;
+    text-align: center;
+    align-items: center;
+    cursor:pointer;
+    padding:10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #D197FF;
+    font-size:1.5em;  
+}
+
+.result{
+    border-radius: 20px;
+    background-color:#C7F3EE;
+    padding:50px;
+    text-align: center;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:10;
+    display: none;
+}
+
+.result img{
+    margin:0 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: none;
+    z-index: 9;                      
+}
+
+#resultText{
+    font-family:'Irish Grover';
+    font-size:1.5em;
+    margin-top:20px;
+    padding:20px;
+    text-align: center;
+}
+
+.reachSurpirse{
+    border-radius: 20px;
+    background-color:#C7F3EE;
+    padding:50px;
+    text-align: center;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:10;
+    display: none;
+}
+
+.reachSurpirse img{
+    margin:0 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: none;
+    z-index: 9;                      
+}
+
+#randomText{
+    font-family:'Irish Grover';
+    font-size:1.5em;
+    margin-top:20px;
+    padding:20px;
+    text-align: center;
+}
+
+#sClose{
+    font-family:'Irish Grover';
+    display:inline-block;
+    margin-top:30px;
+    text-align: center;
+    align-items: center;
+    cursor:pointer;
+    padding:10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #FFCE16;
+    font-size:1.5em;  
+}

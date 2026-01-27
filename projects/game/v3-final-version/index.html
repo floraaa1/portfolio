@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game on final version</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/myfavicon.png" type="image/png">
+
+    <link href = "styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+
+    <style>* {cursor: url(https://cur.cursors-4u.net/cursors/cur-10/cur918.cur), auto !important;}</style>
+</head>
+<body>
+    <a href="https://www.cursors-4u.com/cursor/2011/12/20/wing-pointer.html" target="_blank" title="Pink Wing Pointer"><img src="https://cur.cursors-4u.net/cursor.png" alt="Pink Wing Pointer" style="position:absolute; top: 0px; right: 0px;" /></a>
+
+    <div class="page1">
+        <div class="background">
+            <img src="images/background1.png" alt="background" width="1200" height="750">
+        </div>
+        
+        <div class="text1">
+            <h1>Welcome to <span>Maze Adventure</span></h1>
+            <h2>Please read the rule carefully!</h2>
+        
+            <div class="rule">
+                <ul>
+                    <li><span class="span1">Players & Turns:</span> Two players take turns rolling a die to move through the maze.</li>
+                    <li><span class="span1">Movement:</span> Move according to the die roll but only into open rooms. If trapped by doors, you can trade dice points to move back.</li>
+                    <li><span class="span1">Reroll Option:</span> If unsatisfied, you can reroll but must accept the new result.</li>
+                    <li><span class="span1">Special Rule:</span> Rolling a 1 means you stay in place for that turn.</li>
+                    <li><span class="span1">Mystery Rooms:</span> Rooms with (?) contain surprise boxes with rewards or effects.</li>
+                    <li><span class="span1">Winning condition:</span> First player to reach the exit wins!</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="intro">
+            <button type="button" id="start">Let's go</button>
+        </div>
+    </div>
+
+    <div class="page2">
+        <div class="leftPart">
+            <div class="maze">
+                <img src="images/maze.gif" alt="maze" width="643" height="653">
+            </div>
+
+            <div class="text2">
+                <p><span class="span3">Entrance</span>/<span class="span4">Exit</span></p>
+            </div>
+
+            <div class="text3">
+                <p><span class="span4">Entrance</span>/<span class="span3">Exit</span></p>
+            </div>
+            
+            <div class="chess1-1">
+                <img src="images/player1_c.png" alt="chess1-1" width="28" height="32">
+            </div>
+
+            <div class="chess1-2">
+                <img src="images/player2_c.png" alt="chess1-2" width="28" height="32">
+            </div>
+
+            <div class="surprise">
+                <img src="images/question.png" alt="surprise1" class="surprise1" width="60" height="81">
+                <img src="images/question.png" alt="surprise2" class="surprise2"  width="60" height="81">
+                <img src="images/question.png" alt="surprise3" class="surprise3"  width="60" height="81">
+                <img src="images/question.png" alt="surprise4" class="surprise4"  width="60" height="81">
+            </div>
+        </div>
+
+        
+
+        <div class="rightPart">
+            <div class="player1-panel">
+                <div class="player1">
+                    <img src="images/player1_p2.png" alt="player1" width="100" height="100">
+                    <div class="p1bottom">
+                        <p>Player 1</p>
+                        <div class="chess2-1">
+                            <img src="images/player1_c.png" alt="chess2-1" width="28" height="32">
+                        </div>
+                    </div>
+                </div>
+                <div id="dice1"></div>
+            </div>
+
+            <div class="player2-panel">
+                <div class="player2">
+                    <img src="images/player2_p2.png" alt="player2" width="100" height="100">
+                    <div class="p2bottom">
+                        <p>Player 2</p>
+                        <div class="chess2-2">
+                            <img src="images/player2_c.png" alt="chess2-2" width="28" height="32">
+                        </div>
+                    </div>
+                </div> 
+                <div id="dice2"></div>
+            </div>
+
+            <div class="roll">
+                <button type="button" id="roll">Roll the dice!</button>
+            </div>
+
+            <div class="afterroll">   
+                <div class="rollagain">
+                    <button type="button" id="rollagain">Roll again?</button>
+                </div>
+
+                <div class="like">
+                    <button type="button" id="like">Like this number!</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="reachSurpirse">
+            <img src="images/d1_6.png" alt="dice" width="100" height="100">
+            <img src="images/d2-6.png" alt="dice" width="100" height="100">
+            <img src="images/d1_6.png" alt="dice" width="100" height="100">
+            <div id="randomText"></div>
+            <button type="button" id="sClose">Close</button>
+            <div class="overlay"></div>
+        </div>
+    </div>
+
+    <div class="result">
+        <img src="images/d2-6.png" alt="dice" width="100" height="100">
+        <img src="images/d1_6.png" alt="dice" width="100" height="100">
+        <img src="images/d2-6.png" alt="dice" width="100" height="100">
+        <div id="resultText"></div>
+        <button type="button" id="close">Close</button>
+    </div>
+
+    <div class="overlay"></div>
+
+</body>
+</html>

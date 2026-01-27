@@ -74,6 +74,7 @@ h2 {
     color: #8a83da;
     justify-content: center;
     margin: auto;
+    padding-bottom: 20px;
 }
 
 h3 {
@@ -83,7 +84,7 @@ h3 {
     margin: 10px auto;
     color: #3E579E;
     /* margin:10px; */
-    padding:0 20px 0 20px;
+    padding:0 20px 10px 20px;
     /* padding-bottom: 20px; */
 }
 
@@ -138,6 +139,21 @@ ul {
 }
 
 #home-btn:hover {
-    background-color: #ffa54a; 
+    background-color: #fe5500; 
     color: white;
+}
+
+.hint{
+    padding-top:20px;
+    padding-bottom: 20px;
+    color:#ff8800;
+}
+
+.gamepage2{
+    padding-bottom: 10px;
+}
+
+.title{
+    padding-bottom: 20px;
+    padding-top: 30px;
 }
