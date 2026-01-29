@@ -333,7 +333,8 @@ button:active {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 50px;
-    justify-items: center;
+    /* justify-items: center; */
+    justify-items: stretch;
     padding-bottom: 50px;
 }
 
@@ -438,12 +439,21 @@ button:active {
 
 footer {
     text-align: center;
-    padding: 40px;
-    background-color: rgba(0, 0, 0, 0.6);
-    font-size: 0.9rem;
-    color: rgb(255, 255, 255);
-    border-top: 1px solid var(--glass-border);
+    align-items: center;
+    padding: 60px;
+    background:url('images/footer.png');
+    background-repeat: no-repeat;
+    
+    
+    /* background-position: bottom center; */
+    
+    background-size: 100% auto; 
+    padding-bottom: 40px; 
+    padding-left: 20px;
+    padding-right: 20px;
+    
 }
+
 
 
 .magic-star {
@@ -617,13 +627,95 @@ footer {
 
 
 @media (max-width: 768px) {
+
+    .glass-nav {
+        width: 90%; 
+        height: auto; 
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+        top: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+
+
+    #hero {
+        padding-top: 140px; 
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 50px;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        padding: 0 10px;
+    }
+
+    .profile-pic {
+        max-width: 60%;
+        padding-top: 20px;
+    }
+
     .content-section {
-        padding: 60px 20px;
+        padding: 60px 5%; 
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .skills-grid {
+        gap: 10px;
+    }
+
+    .skill-tag {
+        font-size: 0.9rem;
+        padding: 8px 15px;
     }
 
     .project-grid-wrapper {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        padding: 10px;
-        gap: 20px;
+        grid-template-columns: 1fr; 
+        gap: 30px;
+        padding: 0;
+    }
+    
+    .project-card {
+        max-width: 100%;
+    }
+
+    footer {
+        background-size: cover; 
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 380px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
+    .nav-links a {
+        font-size: 0.8rem;
     }
 }
