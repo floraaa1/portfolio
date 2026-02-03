@@ -624,7 +624,6 @@ footer {
 
 /* --- Profile Interaction Styles --- */
 
-/* 保证容器居中，且不破坏原有布局 */
 .profile-interaction-wrapper {
     display: inline-block;
     position: relative;
@@ -639,29 +638,24 @@ footer {
     align-items: center;
 }
 
-/* 修改原有的 .profile-pic 样式，去掉 padding-top (因为移到 wrapper 上了) 
-   并确保它在最上层 */
 .profile-pic {
     position: relative;
     z-index: 10;
-    padding-top: 0 !important; /* 覆盖原本的 padding */
-    width: 110%; /* 设定一个固定宽度以保证圆弧计算准确，你可以根据需要调整 */
-    /* height: 100%; */
+    padding-top: 0 !important; 
+    width: 110%; 
     object-fit: cover;
     border-radius: 40%;
     cursor: pointer;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* 鼠标悬停在头像上的效果 */
 .profile-pic:hover {
     transform: scale(1.05);
 }
 
-/* --- Orbit System (隐藏部分) --- */
+/* --- Orbit System --- */
 .social-orbit {
     position: absolute;
-    /* 居中于 profile 容器 */
     top: 50%;
     left: 55%;
     transform: translate(-50%, -50%);
@@ -670,8 +664,6 @@ footer {
 }
 
 
-
-/* 单个图标按钮 */
 .orbit-item {
     position: absolute;
     top: 50%;
@@ -685,24 +677,19 @@ footer {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    
-    /* 初始缩在中心 */
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
-    /* 使用 cubic-bezier 让弹出更有弹性感 */
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .orbit-item:hover {
     background: var(--pop-yellow);
     color: #000;
-    transform: translate(-50%, -50%) scale(1.2) !important; /* hover时放大 */
+    transform: translate(-50%, -50%) scale(1.2) !important; 
     box-shadow: 0 0 15px var(--pop-yellow);
 }
 
-/* --- Active State (激活状态) --- */
-
-/* 当父容器有 .active 类时 */
+/* --- Active State  --- */
 .profile-container.active .social-orbit {
     pointer-events: all;
 }
@@ -820,7 +807,7 @@ footer {
             rotate(calc(var(--i) * -45deg + 45deg)) 
             scale(0.9);
     }
-    
+
 }
 
 @media (max-width: 380px) {
