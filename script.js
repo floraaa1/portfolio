@@ -35,6 +35,24 @@
             }, 1000);
         }
 
+        // Profile Interaction Logic
+        const profileTrigger = document.getElementById('profile-trigger');
+        const profileContainer = document.querySelector('.profile-container');
+        
+        if (profileTrigger && profileContainer) {
+            profileTrigger.addEventListener('click', (e) => {
+                // 阻止冒泡，防止点击头像立刻触发 document 的点击关闭事件
+                e.stopPropagation(); 
+                profileContainer.classList.toggle('active');
+            });
+
+            // 点击页面其他任何地方，关闭图标显示
+            document.addEventListener('click', (e) => {
+                if (!profileContainer.contains(e.target)) {
+                    profileContainer.classList.remove('active');
+                }
+            });
+        }
 
         // Typewriter Effect
         const heroTitle = document.querySelector('#hero h1');

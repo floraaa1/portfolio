@@ -44,7 +44,7 @@ html {
 
 .profile-pic {
     max-width: 35%;
-    padding-top: 80px;
+    padding-top: 100px;
 }
 
 body {
@@ -200,8 +200,6 @@ button:active {
     color: var(--primary-purple);
     text-shadow: 4px 4px 0px #feaed4;
     background: none;
-    -webkit-text-fill-color: initial;
-    /* animation: float 3s ease-in-out infinite; */
 }
 
 #hero h2 {
@@ -624,6 +622,105 @@ footer {
     transform: translateY(-2px);
 }
 
+/* --- Profile Interaction Styles --- */
+
+/* 保证容器居中，且不破坏原有布局 */
+.profile-interaction-wrapper {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top:20px;
+}
+
+.profile-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 修改原有的 .profile-pic 样式，去掉 padding-top (因为移到 wrapper 上了) 
+   并确保它在最上层 */
+.profile-pic {
+    position: relative;
+    z-index: 10;
+    padding-top: 0 !important; /* 覆盖原本的 padding */
+    width: 110%; /* 设定一个固定宽度以保证圆弧计算准确，你可以根据需要调整 */
+    /* height: 100%; */
+    object-fit: cover;
+    border-radius: 40%;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 鼠标悬停在头像上的效果 */
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+/* --- Orbit System (隐藏部分) --- */
+.social-orbit {
+    position: absolute;
+    /* 居中于 profile 容器 */
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+
+/* 单个图标按钮 */
+.orbit-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: #4e0092;
+    color: var(--pop-yellow, #fff);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    
+    /* 初始缩在中心 */
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    /* 使用 cubic-bezier 让弹出更有弹性感 */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.orbit-item:hover {
+    background: var(--pop-yellow);
+    color: #000;
+    transform: translate(-50%, -50%) scale(1.2) !important; /* hover时放大 */
+    box-shadow: 0 0 15px var(--pop-yellow);
+}
+
+/* --- Active State (激活状态) --- */
+
+/* 当父容器有 .active 类时 */
+.profile-container.active .social-orbit {
+    pointer-events: all;
+}
+
+.profile-container.active .orbit-bg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.profile-container.active .orbit-item {
+    opacity: 1;
+    transform: 
+        rotate(calc(var(--i) * 40deg - 40deg)) 
+        translate(160px) 
+        rotate(calc(var(--i) * -40deg + 40deg)) 
+        scale(1);
+}
+
 
 
 @media (max-width: 768px) {
@@ -661,6 +758,7 @@ footer {
         font-size: 2.5rem;
         line-height: 1.2;
         padding: 0 10px;
+        margin-top:0;
     }
 
     .profile-pic {
@@ -709,6 +807,20 @@ footer {
         background-size: cover; 
         padding-top: 100px;
     }
+
+    .profile-interaction-wrapper {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    .profile-container.active .orbit-item {
+        transform: 
+            rotate(calc(var(--i) * 45deg - 45deg)) 
+            translate(120px) 
+            rotate(calc(var(--i) * -45deg + 45deg)) 
+            scale(0.9);
+    }
+    
 }
 
 @media (max-width: 380px) {
